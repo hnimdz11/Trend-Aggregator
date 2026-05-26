@@ -1,0 +1,18 @@
+{
+  "keys": [],
+  "feeds": [],
+  "history": [
+    {
+      "id": 1,
+      "keyword": "Messi",
+      "date_range": 15,
+      "timestamp": "2026-05-24T04:30:11.227Z",
+      "raw_data": "[{\"title\":\"Article 1\",\"source\":\"Reddit\",\"date\":\"2026-05-24T04:30:11.227Z\"}]",
+      "summary": "Messi won again!",
+      "chart_data": "[{\"date\":\"2026-05-20\",\"count\":1}]"
+    }
+  ],
+  "cache": [],
+  "chat_history": [],
+  "settings": {}
+}

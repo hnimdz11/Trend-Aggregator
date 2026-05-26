@@ -1,0 +1,59 @@
+{
+  "name": "trend-aggregator",
+  "version": "1.0.0",
+  "description": "AI-Powered Social Media & RSS Aggregator with Gemini integration",
+  "main": "src/main/main.js",
+  "scripts": {
+    "dev": "concurrently -k \"npm run dev:renderer\" \"npm run dev:electron\"",
+    "dev:renderer": "vite",
+    "dev:electron": "cross-env NODE_ENV=development electron .",
+    "build": "npm run build:renderer && electron-builder",
+    "build:renderer": "vite build",
+    "package": "npm run build:renderer && electron-builder --dir",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@google/genai": "^2.4.0",
+    "axios": "^1.7.9",
+    "better-sqlite3": "^11.8.0",
+    "lucide-react": "^0.475.0",
+    "rss-parser": "^3.13.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.2",
+    "cross-env": "^7.0.3",
+    "electron": "^33.2.1",
+    "electron-builder": "^24.13.3",
+    "postcss": "^8.5.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^3.4.17",
+    "vite": "^6.0.7",
+    "vitest": "^2.1.8"
+  },
+  "build": {
+    "appId": "com.trendaggregator.app",
+    "productName": "Trend Aggregator",
+    "directories": {
+      "output": "dist-package"
+    },
+    "files": [
+      "dist/**/*",
+      "src/main/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "asar": true
+  }
+}
